@@ -1,0 +1,133 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px 0;
+  background: #fab942;
+}
+.grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  margin: 5px;
+  background-color: #6589f9;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 120px;
+  width: 120px;
+}
+.card.matched {
+  border: 0;
+  background-image: none !important;
+  pointer-events: none;
+}
+.card.selected {
+  border: 0;
+  background-image: none !important;
+}
+.card {
+  position: relative;
+  transition: all 0.4s linear;
+  transform-style: preserve-3d;
+  background: none !important;
+}
+
+.card,
+.back,
+.front {
+  height: 120px;
+  width: 120px;
+}
+
+.back,
+.front {
+  position: absolute;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.front {
+  background: #fab942 url("./img/Back3-1.png") no-repeat center center / contain;
+}
+.back {
+  transform: rotateY(180deg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.selected {
+  transform: rotateY(180deg);
+}
+
+.matched .front {
+  /* #6589f9 */
+  background: #fab942 !important;
+}
+/* ------------------------+ */
+.Title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* --------------------------------------- */
+.sweet-alert {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  max-width: 450px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: inline-flex;
+  align-items: center;
+  transform: translateX(150%);
+  transition: transform 0.25s linear;
+  animation: sweet 2s linear 1;
+}
+.sweet-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #07a787;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+.sweet-text {
+  font-weight: 300;
+  line-height: 1.4;
+}
+@keyframes sweet {
+  20%,
+  80% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+  /* 20%,
+  100% {
+    transform: translateX(0);
+  } */
+}
+
+.sweet-alert #Ash {
+  width: 200px;
+  height: 200px;
+  border-radius: 40px;
+}
